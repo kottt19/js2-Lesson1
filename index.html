@@ -13,13 +13,23 @@
     <script src="js.js"></script>
     <script>
         window.onload = function (ev) {
-            var menu = new Menu(
-                'myClass',
-                'myClass',
-                [new MenuItems('/', 'Home'),
+            var items = [
+                new MenuItems('/', 'Home'),
+                new MenuItems('/', 'Foto'),
+                new MenuItems('/', 'Blog'),
+                new SuperMenu('childMenu', 'childMenu',[
+                    new MenuItems('/', 'Home'),
                     new MenuItems('/', 'Foto'),
-                    new MenuItems('/', 'Contact'),
-                    new MenuItems('/', 'Blog')] );
+                    new MenuItems('/', 'Blog'),
+                    new SuperMenu('childMenu', 'childMenu', [
+                        new MenuItems('/', 'Home'),
+                        new MenuItems('/', 'Foto'),
+                        new MenuItems('/', 'Blog')
+                    ], 'ChildMenu', '/')
+                ], 'ChildMenu', '/')
+            ];
+
+            var menu = new SuperMenu('menu', 'menu', items);
             document.body.appendChild(menu.render());
         }
     </script>
