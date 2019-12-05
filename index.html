@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        .block {
-            width: 150px;
-            height: 150px;
-            background-color: blueviolet;
-        }
-    </style>
     <script src="js.js"></script>
     <script>
-        window.onload = function (ev) {
-            var menu = new Menu(
-                'myClass',
-                'myClass',
-                [new MenuItems('/', 'Home'),
-                    new MenuItems('/', 'Foto'),
-                    new MenuItems('/', 'Contact'),
-                    new MenuItems('/', 'Blog')] );
-            document.body.appendChild(menu.render());
-        }
+
     </script>
 </head>
 <body>
-
+<div class="container">
+    <h1>Закажи гамбургер</h1>
+    <p>Собери свой гамбургер - конструктор бутерброда онлайн</p>
+    <form action="#" method="get">
+        <p>
+            <label for="size">Размер</label>
+            <select name="size" id="size">
+                <option value="1">Маленький - 50 руб, 20 ККал</option>
+                <option value="2">Большой - 100 руб, 40 ККал</option>
+            </select>
+        </p>
+        <p>
+            <label>Начинка: <input type="radio" name="stuffing" value="2">Салат <span>20 руб, 10 ККал</span></label>
+            <label>Начинка: <input type="radio" name="stuffing" value="3">Картофель <span>15 руб, 10 ККал</span></label>
+        </p>
+    </form>
+</div>
 </body>
 </html>
