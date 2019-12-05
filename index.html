@@ -13,7 +13,7 @@
     <script src="js.js"></script>
     <script>
         window.onload = function (ev) {
-            var items = [
+            var menu2 = [[
                 new MenuItems('/', 'Home'),
                 new MenuItems('/', 'Foto'),
                 new MenuItems('/', 'Blog'),
@@ -27,9 +27,23 @@
                         new MenuItems('/', 'Blog')
                     ], 'ChildMenu', '/')
                 ], 'ChildMenu', '/')
-            ];
+            ],[
+                new MenuItems('/', 'Home'),
+                new MenuItems('/', 'Foto'),
+                new MenuItems('/', 'Blog'),
+                new SuperMenu('childMenu', 'childMenu',[
+                    new MenuItems('/', 'Home'),
+                    new MenuItems('/', 'Foto'),
+                    new MenuItems('/', 'Blog'),
+                    new SuperMenu('childMenu', 'childMenu', [
+                        new MenuItems('/', 'Home'),
+                        new MenuItems('/', 'Foto'),
+                        new MenuItems('/', 'Blog')
+                    ], 'ChildMenu', '/')
+                ], 'ChildMenu', '/')
+            ]];
 
-            var menu = new SuperMenu('menu', 'menu', items);
+            var menu = new SuperMenu('menu', 'menu', menu2);
             document.body.appendChild(menu.render());
         }
     </script>
